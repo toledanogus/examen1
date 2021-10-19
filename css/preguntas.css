@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(241, 218, 191);
+}
+label{
+    margin-left: 7px;
+    padding-bottom: 10px;
+}
+input{
+    padding: 10px;
+    margin-bottom: 12px;
+}
+h3{
+    margin: 0px;
+}
+h2{
+    margin:10px;
+}
