@@ -1,4 +1,5 @@
 let puntaje;
+let r;
 const fun = (e) => {
     let respuestas = [];
     let respuestasCompletas = [];
@@ -26,8 +27,14 @@ const fun = (e) => {
     request.setRequestHeader("Content-type", "application/json");
     request.send(JSON.stringify(datosJson));
 
-      
-   }
+    let req = new XMLHttpRequest();
+    req.onload = function () {
+        r = JSON.parse(req.responseText);
+        console.log(r.espP);
+    };
+    req.open("get", "../php/enviaresp.php", true);
+    req.send();      
+   };
 
 
 const boton = document.querySelector('.boton1');
