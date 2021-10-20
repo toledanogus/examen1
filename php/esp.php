@@ -2,12 +2,9 @@
 //Conectar a la base de datos
 $conn = mysqli_connect('localhost', 'gustavich', 'toledano', 'toledanok') or die(mysqli_erro(mysqli));
 
-//Importa los datos del html
-$uno = $_POST['1'];
-$dos = $_POST['2'];
+$str_json = file_get_contents("php://input");
+$jsonObj = json_decode($str_json);
 
-//Acción a ejecutar en la base de datos
-$escribe = "INSERT INTO examen1(uno,dos) VALUES('$uno','$dos')";
-
-//Ejecuta la conexión y luego la acción
-mysqli_query($conn, $escribe);
+//Con mysqli_query se hace una petición a la base de datos, ya sea para llamar datos, modificar o insertar datos
+mysqli_query($conn, "INSERT INTO examen1 (espP, uno, dos) VALUES ('".$jsonObj->espP."','".$jsonObj->xxx."','".$jsonObj->xxx1."')");
+?>
