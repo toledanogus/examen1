@@ -11,12 +11,12 @@ $verificar = mysqli_query($conn, "SELECT * FROM examen1 WHERE nombre= '".$jsonOb
 $row = mysqli_fetch_array($verificar);
 $valor = $row['antitrampa'];
 
-if ($valor >= 1) {
+if ($valor >= 3) {
   echo "Error";
   }
 else {
     
-    mysqli_query($conn, "UPDATE examen1 SET antitrampa=1, espP='".$jsonObj->espP."', e1='".$jsonObj->xxx0."', e2='".$jsonObj->xxx1."', e3='".$jsonObj->xxx2."', e4='".$jsonObj->xxx3."', e5='".$jsonObj->xxx4."', e6='".$jsonObj->xxx5."', e7='".$jsonObj->xxx6."', e8='".$jsonObj->xxx7."', e9='".$jsonObj->xxx8."', e10='".$jsonObj->xxx9."', e11='".$jsonObj->xxx10."', e12='".$jsonObj->xxx11."', e13='".$jsonObj->xxx12."', e14='".$jsonObj->xxx13."' WHERE nombre= '".$jsonObj->nom."' AND apellidos= '".$jsonObj->ape."'");
+    mysqli_query($conn, "UPDATE examen1 SET antitrampa=antitrampa+1, cnP='".$jsonObj->cnP."', cn1='".$jsonObj->xxx0."', cn2='".$jsonObj->xxx1."', cn3='".$jsonObj->xxx2."', cn4='".$jsonObj->xxx3."', cn5='".$jsonObj->xxx4."', cn6='".$jsonObj->xxx5."', cn7='".$jsonObj->xxx6."', cn8='".$jsonObj->xxx7."', cn9='".$jsonObj->xxx8."', cn10='".$jsonObj->xxx9."', cn11='".$jsonObj->xxx10."', cn12='".$jsonObj->xxx11."', cn13='".$jsonObj->xxx12."', cn14='".$jsonObj->xxx13."' WHERE nombre= '".$jsonObj->nom."' AND apellidos= '".$jsonObj->ape."'");
 }
 
 ?>

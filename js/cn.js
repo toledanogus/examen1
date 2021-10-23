@@ -24,8 +24,8 @@ const fun = (e) => {
     respuestas.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
     puntaje=counts.rc;
     console.log(puntaje);
-    let promedioesp = (puntaje*10)/14
-    console.log(promedioesp);
+    let promediocn = (puntaje*10)/14
+    console.log(promediocn);
     if (puntaje==undefined) {
         alert('Ninguna de tus respuestas es correcta ¿Deseas volver a intentarlo?');
     }
@@ -35,15 +35,15 @@ const fun = (e) => {
     }
     datosJson["nom"]= nombre;
     datosJson["ape"]= apellido;
-    datosJson["espP"]= promedioesp;
+    datosJson["cnP"]= promediocn;
 
     const conti = confirm('¿Deseas registrar tus respuestas y continuar?');
     if (conti==true) {
         request = new XMLHttpRequest();
-        request.open("POST", "../php/esp.php", true);
+        request.open("POST", "../php/cn.php", true);
         request.setRequestHeader("Content-type", "application/json");
         request.send(JSON.stringify(datosJson));
-        window.location.href='../pags/mate.html'
+        window.location.href='../pags/his.html'
     }
     else{
         return;
