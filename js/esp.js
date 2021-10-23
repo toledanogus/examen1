@@ -7,6 +7,12 @@ console.log(nombre);
 const fun = (e) => {
     let respuestas = [];
     let respuestasCompletas = [];
+    for (let a = 1; a < 12; a++) {
+        if (document.querySelector(`input[name="${a}"]:checked`) == null) {
+            alert('Te faltan preguntas por responder');
+            return;
+        }
+    }
     for (let i = 1; i < 12; i++) {
         respuestas.push(document.querySelector(`input[name="${i}"]:checked`).value);
         respuestasCompletas.push(document.querySelector(`input[name="${i}"]:checked`).nextElementSibling.innerText);
@@ -24,25 +30,27 @@ const fun = (e) => {
         alert('Ninguna de tus respuestas es correcta ¿Deseas volver a intentarlo?');
     }
     let datosJson = new Object();
-    datosJson["xxx"]= respuestasCompletas[0];
-    datosJson["xxx1"]= respuestasCompletas[1];
-    datosJson["xxx2"]= respuestasCompletas[2];
-    datosJson["xxx3"]= respuestasCompletas[3];
-    datosJson["xxx4"]= respuestasCompletas[4];
-    datosJson["xxx5"]= respuestasCompletas[5];
-    datosJson["xxx6"]= respuestasCompletas[6];
-    datosJson["xxx7"]= respuestasCompletas[7];
-    datosJson["xxx8"]= respuestasCompletas[8];
-    datosJson["xxx9"]= respuestasCompletas[9];
-    datosJson["xxx10"]= respuestasCompletas[10];
+    for (let j = 0; j < 11; j++) {
+        datosJson["xxx"+j]= respuestasCompletas[j];
+    }
     datosJson["nom"]= nombre;
     datosJson["ape"]= apellido;
     datosJson["espP"]= promedioesp;
-    request = new XMLHttpRequest();
-    request.open("POST", "../php/esp.php", true);
-    request.setRequestHeader("Content-type", "application/json");
-    request.send(JSON.stringify(datosJson));
 
+    const conti = confirm('¿Deseas registrar tus respuestas y continuar?');
+    if (conti==true) {
+        request = new XMLHttpRequest();
+        request.open("POST", "../php/esp.php", true);
+        request.setRequestHeader("Content-type", "application/json");
+        request.send(JSON.stringify(datosJson));
+        window.location.href='../pags/mate.html'
+    }
+    else{
+        return;
+    }
+    
+    
+    
     //Leer datos de base de datos
     /*let req = new XMLHttpRequest();
     req.onload = function () {
@@ -53,6 +61,7 @@ const fun = (e) => {
     req.send();*/   
    };
 
-
 const boton = document.querySelector('.boton1');
 boton.addEventListener('click', fun);
+
+
