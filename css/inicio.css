@@ -26,3 +26,10 @@ img{
     border-radius: 7px;
     background-color: rgb(255, 200, 158);
 }
+.cali{
+    text-align: center;
+}
+th, td{
+    padding:5px;
+    border: 1px solid rgb(0, 0, 0);
+}

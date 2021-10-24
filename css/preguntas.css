@@ -10,6 +10,12 @@
 #fondoma{
     background-color: rgb(212, 231, 245);
 }
+#fondoge{
+    background-color: rgb(212, 255, 246);
+}
+#fondofo{
+    background-color: rgb(221, 221, 221);
+}
 label{
     display: block;
     margin-left: 30px;

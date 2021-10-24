@@ -7,13 +7,13 @@ console.log(nombre);
 const fun = (e) => {
     let respuestas = [];
     let respuestasCompletas = [];
-    for (let a = 1; a < 12; a++) {
+    for (let a = 1; a < 10; a++) {
         if (document.querySelector(`input[name="${a}"]:checked`) == null) {
             alert('Te faltan preguntas por responder');
             return;
         }
     }
-    for (let i = 1; i < 12; i++) {
+    for (let i = 1; i < 10; i++) {
         respuestas.push(document.querySelector(`input[name="${i}"]:checked`).value);
         respuestasCompletas.push(document.querySelector(`input[name="${i}"]:checked`).nextElementSibling.innerText);
     }
@@ -24,26 +24,26 @@ const fun = (e) => {
     respuestas.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
     puntaje=counts.rc;
     console.log(puntaje);
-    let promediohis = (puntaje*10)/11
-    console.log(promediohis);
+    let promediogeo = (puntaje*10)/9
+    console.log(promediogeo);
     if (puntaje==undefined) {
         alert('Ninguna de tus respuestas es correcta ¿Deseas volver a intentarlo?');
     }
     let datosJson = new Object();
-    for (let j = 0; j < 11; j++) {
+    for (let j = 0; j < 9; j++) {
         datosJson["xxx"+j]= respuestasCompletas[j];
     }
     datosJson["nom"]= nombre;
     datosJson["ape"]= apellido;
-    datosJson["hisP"]= promediohis;
+    datosJson["geoP"]= promediogeo;
 
     const conti = confirm('¿Deseas registrar tus respuestas y continuar?');
     if (conti==true) {
         request = new XMLHttpRequest();
-        request.open("POST", "../php/his.php", true);
+        request.open("POST", "../php/geo.php", true);
         request.setRequestHeader("Content-type", "application/json");
         request.send(JSON.stringify(datosJson));
-        window.location.href='../pags/geo.html'
+        window.location.href='../pags/for.html'
     }
     else{
         return;

@@ -16,7 +16,7 @@ if ($valor >= 1) {
   }
 else {
     
-    mysqli_query($conn, "UPDATE examen1 SET antitrampa=1, espP='".$jsonObj->espP."', e1='".$jsonObj->xxx0."', e2='".$jsonObj->xxx1."', e3='".$jsonObj->xxx2."', e4='".$jsonObj->xxx3."', e5='".$jsonObj->xxx4."', e6='".$jsonObj->xxx5."', e7='".$jsonObj->xxx6."', e8='".$jsonObj->xxx7."', e9='".$jsonObj->xxx8."', e10='".$jsonObj->xxx9."', e11='".$jsonObj->xxx10."', e12='".$jsonObj->xxx11."', e13='".$jsonObj->xxx12."', e14='".$jsonObj->xxx13."' WHERE nombre= '".$jsonObj->nom."' AND apellidos= '".$jsonObj->ape."'");
+    mysqli_query($conn, "UPDATE examen1 SET espP='".$jsonObj->espP."', e1='".$jsonObj->xxx0."', e2='".$jsonObj->xxx1."', e3='".$jsonObj->xxx2."', e4='".$jsonObj->xxx3."', e5='".$jsonObj->xxx4."', e6='".$jsonObj->xxx5."', e7='".$jsonObj->xxx6."', e8='".$jsonObj->xxx7."', e9='".$jsonObj->xxx8."', e10='".$jsonObj->xxx9."', e11='".$jsonObj->xxx10."', e12='".$jsonObj->xxx11."', e13='".$jsonObj->xxx12."', e14='".$jsonObj->xxx13."' WHERE nombre= '".$jsonObj->nom."' AND apellidos= '".$jsonObj->ape."'");
 }
 
 ?>
