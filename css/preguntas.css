@@ -1,0 +1,47 @@
+#fondoes {
+    background-color: rgb(248, 239, 232);
+}
+#fondocn{
+    background-color: rgb(232, 245, 219);
+}
+#fondohi{
+    background-color: rgb(255, 230, 253);
+}
+#fondoma{
+    background-color: rgb(212, 231, 245);
+}
+label{
+    display: block;
+    margin-left: 30px;
+    padding-bottom: 2px;
+    line-height : 25px;
+    
+}
+input{
+    padding: 10px;
+    margin-bottom: 12px;
+    float: left;
+}
+h3{
+    margin: 0px;
+}
+h2{
+    margin:10px;
+}
+img{
+    max-width: 100%;
+    
+}
+
+em {
+    font-size:larger;
+}
+p{
+    margin-left: 10px;
+}
+.boton1{
+    font-size:x-large;
+    font-weight: bold;
+    border-radius: 7px;
+    background-color: rgb(255, 200, 158);
+}

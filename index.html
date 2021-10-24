@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/preguntase.css">
+    <link rel="stylesheet" href="css/inicio.css">
     <title>Examen Primer Periodo</title>
 </head>
-<body>
+<body id="fondoes">
     <fieldset>
         <legend> <h2> Examen del Primer Periodo 6º "B"</h2></legend>
         <p>Escribe tu nombre y apellidos en las casillas correspondientes:</p>
         <form method="post" action="php/nombre.php">
-            <label for="">Nombres: </label>
+            <label>Nombres: </label>
             <input type="text" id="nombre" name="nombre" required>
             <br>
-            <label>Apellidos </label>
+            <label>Apellidos: </label>
             <input type="text" id="apellido" name="apellido" required>
             <br>
             <button id="enviar" type="submit" onclick="recibir()">Comenzar</button>

@@ -60,7 +60,8 @@ const fun = (e) => {
     req.open("get", "../php/enviaresp.php", true);
     req.send();*/   
    };
-
+const saludo = document.querySelector('#saludo');
+saludo.innerHTML=`Bienvenido al examen.<br>${nombre}, lee con atención las preguntas y selecciona la respuesta correcta`;
 const boton = document.querySelector('.boton1');
 boton.addEventListener('click', fun);
 
