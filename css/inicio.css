@@ -26,6 +26,10 @@ img{
     border-radius: 7px;
     background-color: rgb(255, 200, 158);
 }
+#enviar2{
+    font-weight: bold;
+    background-color: rgb(255, 200, 158);
+}
 .cali{
     text-align: center;
 }

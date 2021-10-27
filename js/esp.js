@@ -89,7 +89,7 @@ function myTimer(){
     request.send(JSON.stringify(datosJson));
     clearInterval(fff);
     alert('Tiempo agotado');
-    window.location.replace("http://www.w3schools.com");
+    window.location.href='../pags/final.html'
     } 
     };
 gus();

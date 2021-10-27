@@ -16,6 +16,24 @@
 #fondofo{
     background-color: rgb(221, 221, 221);
 }
+#esp{
+    background-color: rgb(255, 185, 132);
+}
+#cn{
+    background-color: rgb(183, 250, 116);
+}
+#his{
+    background-color: rgb(253, 145, 244);
+}
+#mate{
+    background-color: rgb(118, 193, 247);
+}
+#geo{
+    background-color: rgb(107, 221, 196);
+}
+#for{
+    background-color: rgb(155, 155, 155);
+}
 label{
     display: block;
     margin-left: 30px;
