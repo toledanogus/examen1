@@ -6,6 +6,6 @@ const recibir = () => {
     console.log(ren);
 
     const hora = new Date();
-    hora.setMinutes(hora.getMinutes()+60);
+    hora.setMinutes(hora.getMinutes()+2);
     localStorage.setItem('Tiempo', hora);
     };

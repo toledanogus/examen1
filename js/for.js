@@ -1,8 +1,13 @@
-let puntaje;
-let r;
-
 const nombre = localStorage.getItem('nombre');
 const apellido = localStorage.getItem('apellido');
+const saludo = document.querySelector('#saludo');
+const boton = document.querySelector('.boton1');
+const inicio = Date.parse(localStorage.getItem('Tiempo'));
+let puntaje;
+let r;
+let hora2; 
+let fff;
+
 console.log(nombre);
 const fun = (e) => {
     let respuestas = [];
@@ -37,37 +42,30 @@ const fun = (e) => {
     datosJson["ape"]= apellido;
     datosJson["forP"]= promediofor;
 
-    const conti = confirm('¿Deseas finalizar?\n Si Aceptas, se registrarán todas tus calificaciones y no podrás hacer más cambios.');
+    const conti = confirm('¿Deseas registrar tus respuestas y continuar?');
     if (conti==true) {
-        request = new XMLHttpRequest();
-        request.open("POST", "../php/for.php", true);
-        request.setRequestHeader("Content-type", "application/json");
-        request.send(JSON.stringify(datosJson));
+        const url = '../php/for.php';
+        const enviar_datos = async() => {
+            const resp = await fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(datosJson),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        };
+        enviar_datos();
         window.location.href='../pags/final.html'
-    }
+        }
     else{
         return;
-    }
-    
-    
-    
-    //Leer datos de base de datos
-    /*let req = new XMLHttpRequest();
-    req.onload = function () {
-        r = JSON.parse(req.responseText);
-        console.log(r.espP);
-    };
-    req.open("get", "../php/enviaresp.php", true);
-    req.send();*/   
+    } 
    };
-const saludo = document.querySelector('#saludo');
+
 saludo.innerHTML=`${nombre}, lee con atención las preguntas y selecciona la respuesta correcta`;
-const boton = document.querySelector('.boton1');
+
 boton.addEventListener('click', fun);
 
-const inicio = Date.parse(localStorage.getItem('Tiempo'));
-let hora2; 
-let fff;
 const gus=()=>{
     fff=setInterval(myTimer,1000);
 }
@@ -83,10 +81,17 @@ function myTimer(){
         datosJson["nom"]= nombre;
         datosJson["ape"]= apellido;
         
-        request = new XMLHttpRequest();
-        request.open("POST", "../php/fin.php", true);
-        request.setRequestHeader("Content-type", "application/json");
-        request.send(JSON.stringify(datosJson));
+        const url = '../php/fin.php';
+        const enviar_datos_fin = async() => {
+            const resp = await fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(datosJson),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        };
+        enviar_datos_fin();
         clearInterval(fff);
         alert('Tiempo agotado');
         window.location.href='../pags/final.html'
