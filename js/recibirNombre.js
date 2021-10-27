@@ -4,4 +4,8 @@ const recibir = () => {
     localStorage.setItem('nombre', ren);
     localStorage.setItem('apellido', rea);
     console.log(ren);
-};
+
+    const hora = new Date();
+    hora.setMinutes(hora.getMinutes()+60);
+    localStorage.setItem('Tiempo', hora);
+    };

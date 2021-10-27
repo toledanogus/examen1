@@ -65,4 +65,34 @@ saludo.innerHTML=`Bienvenido al examen.<br>${nombre}, lee con atención las preg
 const boton = document.querySelector('.boton1');
 boton.addEventListener('click', fun);
 
+const inicio = Date.parse(localStorage.getItem('Tiempo'));
+let hora2; 
+let fff;
+const gus=()=>{
+    fff=setInterval(myTimer,1000);
+}
+function myTimer(){
+    hora2 = new Date();
+    let diff = Math.round((inicio - hora2)/1000, 1);
+    diff2=diff;
+    let minutes = Math.floor(diff / 60);
+    let seconds = diff - minutes * 60;
+    seconds<10 ? document.querySelector('#timer').innerHTML=`Tiempo restante: ${minutes}:0${seconds}` : document.querySelector('#timer').innerHTML=`Tiempo restante: ${minutes}:${seconds}`;
+    if (diff2<=0){
+    let datosJson = new Object();
+    datosJson["nom"]= nombre;
+    datosJson["ape"]= apellido;
+    
+    request = new XMLHttpRequest();
+    request.open("POST", "../php/fin.php", true);
+    request.setRequestHeader("Content-type", "application/json");
+    request.send(JSON.stringify(datosJson));
+    clearInterval(fff);
+    alert('Tiempo agotado');
+    window.location.replace("http://www.w3schools.com");
+    } 
+    };
+gus();
+
+
 

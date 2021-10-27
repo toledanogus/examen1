@@ -10,6 +10,7 @@
 <body id="fondoes">
     <fieldset>
         <legend> <h2> Examen del Primer Periodo 6º "B"</h2></legend>
+        <p>Tienes <b>1 hora </b>para realizar el examen. Después de ese tiempo ya no podrás hacer cambios ni enviar más respuestas.</p> 
         <p>Escribe tu nombre y apellidos en las casillas correspondientes:</p>
         <form method="post" action="php/nombre.php">
             <label>Nombres: </label>
@@ -18,6 +19,7 @@
             <label>Apellidos: </label>
             <input type="text" id="apellido" name="apellido" required>
             <br>
+            
             <button id="enviar" type="submit" onclick="recibir()">Comenzar</button>
         </form>
     </fieldset>
