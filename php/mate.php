@@ -1,6 +1,6 @@
 <?php
 //Conectar a la base de datos
-$conn = mysqli_connect('localhost', 'gustavich', 'toledano', 'toledanok') or die(mysqli_error($conn));
+$conn = mysqli_connect('localhost', 'toledano_1', 'sfreud1978', 'toledano_pedrueza') or die(mysqli_error($conn));
 
 $str_json = file_get_contents("php://input");
 $jsonObj = json_decode($str_json);
@@ -11,7 +11,7 @@ $verificar = mysqli_query($conn, "SELECT * FROM examen1 WHERE nombre= '".$jsonOb
 $row = mysqli_fetch_array($verificar);
 $valor = $row['antitrampa'];
 
-if ($valor >= 2) {
+if ($valor >= 1) {
   echo "Error";
   }
 else {

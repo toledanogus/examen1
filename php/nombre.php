@@ -1,6 +1,6 @@
 <?php
 //Conectar a la base de datos
-$conn = mysqli_connect('localhost', 'gustavich', 'toledano', 'toledanok') or die(mysqli_error($conn));
+$conn = mysqli_connect('localhost', 'toledano_1', 'sfreud1978', 'toledano_pedrueza') or die(mysqli_error($conn));
 
 $nombre = $_POST['nombre'];
 $apellidos =$_POST['apellido'];
