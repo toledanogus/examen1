@@ -53,9 +53,10 @@ const fun = (e) => {
                     'Content-Type': 'application/json'
                 }
             });
+            return window.location.href='../pags/cn.html';
         };
         enviar_datos();
-        window.location.href='../pags/cn.html'
+        
         }
     else{
         return;
